@@ -1,10 +1,10 @@
 fun main(args: Array<String>) {
     try {
-    val a = args[0].toFloat();
-    val op = args[1];
-    val b =  args[2].toFloat();
-    val result = operation(a,op,b);
-    println("this is the result ${result}")
+        val a = args[0].toFloat();
+        val op = args[1];
+        val b =  args[2].toFloat();
+        val result = operation(a,op,b);
+        println("this is the result ${result}")
     } catch(e:ArrayIndexOutOfBoundsException) {
         println("Err: Falta parâmetros")
     } catch(e:NumberFormatException) {
