@@ -9,7 +9,7 @@ class App {
                 readLine()!!.toInt() 
             } catch (e:NumberFormatException) {
                 println("Formato de opcção não aceito.")
-                -1
+                4
             } catch (e:NullPointerException) {
                 println("Err: Erro não reconhecido.")
                 -1
