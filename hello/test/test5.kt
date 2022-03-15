@@ -1,10 +1,10 @@
 fun main() {
     var a1 :String?
     a1 = rand_t()
-    print_especial(a1!!)
+    println(a1?.isEmpty())
 }
 
-fun print_especial(n:String) {
+fun print_especial(n:String?) {
     println(n)
 }
 
