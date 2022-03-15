@@ -4,12 +4,38 @@
 package people
 
 class App {
-    val greeting: String
-        get() {
-            return "Hello World!"
+      fun readOption():Int {
+            return try {
+                readLine()!!.toInt() 
+            } catch (e:NumberFormatException) {
+                println("Formato de opcção não aceito.")
+                -1
+            } catch (e:NullPointerException) {
+                println("Err: Erro não reconhecido.")
+                -1
+            }
         }
+    fun printOptions() {
+      
+        println("-------------------------------------")
+        println("| 1) Create new user----------------|")
+        println("| 2) See last register--------------|")
+        println("| 3) See all Registers--------------|")
+        println("| 4) Save and Quit------------------|")
+        println("| 5) Quit w/o sag-------------------|")
+        println("-------------------------------------")
+        println("Choose [default 4]: ")
+
+    }
+    
+    fun run() {
+        this.printOptions()
+        print(this.readOption())
+    }
 }
 
 fun main() {
-    println(App().greeting)
+    App().run();
 }
+
+
