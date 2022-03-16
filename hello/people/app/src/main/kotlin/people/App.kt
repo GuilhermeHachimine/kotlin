@@ -34,6 +34,13 @@ class App {
     fun seeAllRegisterOption() {
         println("\nSee all option")
         println("======================")
+        if(this.people.isEmpty()) {
+            println("\nNão há pessoas cadastradas na memória")
+            return
+        }
+        for(person in this.people) {
+            println(person)
+        }
     }
     fun seeLastRegisterOption() {
         println("\nLast register")
