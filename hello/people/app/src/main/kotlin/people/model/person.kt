@@ -9,10 +9,11 @@ data class Person (
     override fun toString(): String {
         return  (
             """ 
-            ${this.name} 
-            ${this.age} 
-            ${this.height} 
-            ${this.gender}
+            name: ${this.name} 
+            ====================================
+            age: ${this.age} 
+            height: ${this.height} 
+            gender: ${this.gender}
             """
         )
     }

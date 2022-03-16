@@ -9,6 +9,7 @@ import people.model.Person
 
 
 class App {
+    val people = ArrayList<Person>()
     fun createNewPersonOption() {
         println("\nCreate option")
         println("======================")
@@ -46,16 +47,25 @@ class App {
         println("\nSave option")
         println("======================")
     }
-    fun processOption(opt: Int) {
+    fun processOption(opt: Int):Boolean {
         when (opt) {
-            1 -> this.createNewPersonOption()
-            2 -> this.seeLastRegisterOption()
-            3 -> this.seeAllRegisterOption()
+            1 -> {
+                this.createNewPersonOption()
+            }
+            2 -> { 
+                this.seeLastRegisterOption()
+            }
+            3 -> { 
+                this.seeAllRegisterOption()
+            }
             4 -> {
                 this.saveOption()
             }
+            5 -> { return false }
             else -> {
                 println("Opção inválida")
+                this.saveOption()
+                return false
             }
         }
         return true
@@ -94,7 +104,7 @@ class App {
         do {
             this.printOptions()
             val op = this.readOption()
-            val process = this.process(op)
+            val process = this.processOption(op)
         } while (process)
     }
 }
