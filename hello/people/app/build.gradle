@@ -25,6 +25,8 @@ run {
 }
 
 dependencies {
+    //utilizando biblioteca jdbc para sqlite
+    implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
     // Align versions of all Kotlin components
     implementation platform('org.jetbrains.kotlin:kotlin-bom')
 
