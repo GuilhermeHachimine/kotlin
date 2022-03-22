@@ -6,6 +6,14 @@ data class Person (
     val height: Float,
     val gender: String,
 ) {
+    var id: Int? = null
+    var timestamp: String = ""
+    constructor(
+        id:Int,name: String, age: Int, height: Float,gender:String,timestamp: String
+    ) : this(name, age, height, gender){
+        this.id = id 
+        this.timestamp = timestamp
+    }
     override fun toString(): String {
         return  (
             """ 
