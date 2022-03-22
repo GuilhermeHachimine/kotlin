@@ -5,11 +5,24 @@
  // export JAVA_HOME=/usr/lib/jvm/java-16-openjdk-amd64/ 
 package people
 import people.model.Person
+import people.data.PeopleDAO
+import java.sql.SQLException
 
 
 
 class App {
-    val people = ArrayList<Person>()
+    private val people = ArrayList<Person>()
+    private var peopleDAO = PeopleDAO()
+    private lateinit var dsPeople:ArrayList<Person>
+
+    init {
+        try {
+            this.dbPeople = this.peopleDAO.getAllPeople()
+        } catch(e:SQLException) {
+            println("Err: Problema com o banco: ${e}")
+            this.dbPeople = ArrayList<Person>()
+        }
+    }
     fun createNewPersonOption() {
         println("\nCreate option")
         println("======================")
